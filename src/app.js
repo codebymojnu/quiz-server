@@ -10,11 +10,19 @@ const UPLOADS_DIR = uploadDir
 const BACKGROUNDS_DIR = backgroundDir
 
 const app = express()
-app.use(cors());
+const corsOptions = {
+  origin: process.env.PUBLIC_URL || '*', // Replace '*' with your frontend URL in production
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
 
 // Body parser middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+
+
 // Serve static files
 app.use('/images', express.static(UPLOADS_DIR))
 app.use('/backgrounds', express.static(BACKGROUNDS_DIR))
