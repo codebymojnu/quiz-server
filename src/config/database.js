@@ -15,7 +15,7 @@ const sequelize = new Sequelize(process.env.MYSQL_DATABASE, process.env.MYSQLUSE
     acquire: 30000, // Maximum time (ms) to try to get a connection before throwing error
     idle: 10000, // Maximum time (ms) a connection can be idle before being released
   },
-  logging: false,
+  logging: console.log,
 });
 
 module.exports = sequelize;

@@ -30,6 +30,10 @@ const Question = sequelize.define(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    explanation: {
+      type: DataTypes.TEXT,  // Assuming 'mdx-content' is stored as TEXT
+      allowNull: false,
+    },
     marks: {
       type: DataTypes.INTEGER,
       defaultValue: 5,

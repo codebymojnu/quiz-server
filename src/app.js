@@ -12,7 +12,7 @@ const BACKGROUNDS_DIR = backgroundDir
 const app = express()
 const corsOptions = {
   origin: process.env.PUBLIC_URL || '*', // Replace '*' with your frontend URL in production
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true,
 };
 
